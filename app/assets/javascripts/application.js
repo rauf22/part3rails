@@ -1,0 +1,37 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
+// vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
+
+    <script>
+        jQuery(document).ready(function($) {
+          $('.my-slider').unslider({
+            autoplay:true,
+            arrows:false
+          });
+        });
+    </script>
+
+    <script>
+      function setEqualHeight(columns) { 
+        var tallestcolumn = 0; 
+        columns.each( function() { 
+          currentHeight = $(this).height(); 
+          if(currentHeight > tallestcolumn) { tallestcolumn = currentHeight; } } ); 
+          columns.height(tallestcolumn); 
+        } 
+        
+        $(document).ready(function() { setEqualHeight($(".block4-main-content")); });
+    </script>
